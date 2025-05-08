@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Kontrol Lampu</title></head>
+<body>
+  <h2>Klik Tombol:</h2>
+  <button onclick="kirim('on')">ON</button>
+  <button onclick="kirim('off')">OFF</button>
+
+  <script>
+    function kirim(status) {
+      fetch('https://namasite.azurewebsites.net/api/lampu?status=' + status)
+        .then(res => alert('Perintah dikirim!'));
+    }
+  </script>
+</body>
+</html>
